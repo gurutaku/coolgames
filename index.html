@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f4ee" />
+  <meta name="description" content="Gurutaku learning games and activities." />
+  <title>Gurutaku · Learning Games</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-noise"></div>
+  </div>
+
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Gurutaku home">
+        <span class="brand-mark">G</span>
+        <span>
+          <strong>gurutaku</strong>
+          <small>Learning Playground</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <button id="refreshBtn" class="header-btn" type="button">↻ Refresh</button>
+        <a id="githubBtn" class="header-btn" target="_blank" rel="noreferrer" href="https://github.com/gurutaku">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">LEARN · PLAY · PRACTICE</div>
+          <h1>What will you play today?<br><span>Learning can be fun.</span></h1>
+          <p>All of Gurutaku's learning games in one place. Search, choose, and start playing.</p>
+          <div class="hero-meta">
+            <div class="stat-pill"><strong id="appCount">—</strong><span>games</span></div>
+            <div class="stat-pill"><strong id="categoryCount">—</strong><span>topics</span></div>
+            <div class="stat-pill"><strong id="sourceStatus">—</strong><span>source</span></div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <span class="sparkle">✦</span>
+            <span>Featured game</span>
+          </div>
+          <div id="featuredPreview" class="featured-preview">
+            <div class="loading-lines"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="toolbar" aria-label="Search and filters">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search games, topics, or keywords…" autocomplete="off" />
+        </label>
+        <div id="categoryFilters" class="filter-row" role="tablist" aria-label="Game categories"></div>
+      </section>
+
+      <section class="section-heading">
+        <div>
+          <div class="eyebrow">YOUR PLAYGROUND</div>
+          <h2>All Games</h2>
+        </div>
+        <div id="resultCount" class="result-count">Loading…</div>
+      </section>
+
+      <section id="appGrid" class="app-grid" aria-live="polite"></section>
+
+      <section id="emptyState" class="empty-state hidden">
+        <div class="empty-icon">🔎</div>
+        <h3>No games found</h3>
+        <p>Try another search term, or clear the filters.</p>
+        <button id="clearFiltersBtn" class="primary-btn" type="button">Clear filters</button>
+      </section>
+
+      <section class="manage-note">
+        <div class="manage-icon">⚙</div>
+        <div>
+          <strong>Want to manage the game list yourself?</strong>
+          <p>Edit <code>apps.json</code> in this site. You can disable auto-discovery or override titles, categories, icons, and ordering.</p>
+        </div>
+        <a target="_blank" rel="noreferrer" href="https://docs.github.com/en/pages">GitHub Pages ↗</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Gurutaku · Made for curious learners</span>
+      <span id="lastUpdated">—</span>
+    </footer>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
