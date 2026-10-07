@@ -1,39 +1,38 @@
 {
   "site": {
     "name": "gurutaku",
-    "tagline": "Learning Playground",
-    "description": "A simple home for Gurutaku learning games.",
+    "tagline": "Game Garden",
+    "description": "A cheerful home for Gurutaku learning games.",
     "githubUser": "gurutaku",
     "githubUrl": "https://github.com/gurutaku"
   },
   "discovery": {
     "mode": "hybrid",
     "discoverGitHubPages": true,
-    "maxRepositories": 300
+    "maxRepositories": 300,
+    "ignoreRepositories": [
+      "gurutaku.github.io"
+    ]
   },
   "overrides": {
     "gurutaku.github.io": {
-      "title": "Gurutaku Home",
-      "description": "The entry point for Gurutaku learning games.",
-      "category": "Platform",
-      "icon": "✦",
       "hide": true
     },
     "chinese-character-weekly": {
       "title": "Weekly Chinese Characters",
-      "subtitle": "每週 10 個中文字",
-      "description": "Learn 520 Traditional Chinese characters across 52 weeks with stroke order, pronunciation, meanings, and example sentences.",
-      "category": "Chinese Learning",
+      "subtitle": "10 characters a week · 520 for the year",
+      "description": "Learn Traditional Chinese characters with stroke order, pronunciation, meanings, and example sentences.",
+      "category": "Chinese",
       "icon": "🀄",
       "featured": true,
       "order": 1
     },
     "math24": {
       "title": "Math 24",
-      "description": "Use four numbers and basic operations to make 24.",
+      "subtitle": "Make 24!",
+      "description": "Use four numbers and math operations to make the number 24.",
       "category": "Math",
-      "icon": "➗",
-      "featured": false,
+      "icon": "🔢",
       "order": 2
     }
   },
@@ -41,10 +40,10 @@
     {
       "id": "chinese-character-weekly",
       "title": "Weekly Chinese Characters",
-      "subtitle": "每週 10 個中文字",
-      "description": "Learn 520 Traditional Chinese characters across 52 weeks with stroke order, pronunciation, meanings, and example sentences.",
+      "subtitle": "10 characters a week · 520 for the year",
+      "description": "Learn Traditional Chinese characters with stroke order, pronunciation, meanings, and example sentences.",
       "url": "https://gurutaku.github.io/chinese-character-weekly/",
-      "category": "Chinese Learning",
+      "category": "Chinese",
       "icon": "🀄",
       "featured": true,
       "order": 1
@@ -52,11 +51,11 @@
     {
       "id": "math24",
       "title": "Math 24",
-      "description": "Use four numbers and basic operations to make 24.",
+      "subtitle": "Make 24!",
+      "description": "Use four numbers and math operations to make the number 24.",
       "url": "https://gurutaku.github.io/math24/",
       "category": "Math",
-      "icon": "➗",
-      "featured": false,
+      "icon": "🔢",
       "order": 2
     }
   ]

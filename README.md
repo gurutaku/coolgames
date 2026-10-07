@@ -1,63 +1,33 @@
-# Gurutaku Dashboard
+# Gurutaku Game Garden
 
-A static, GitHub Pages-friendly entrance page for the Gurutaku learning games.
+A kid-friendly, English-first GitHub Pages dashboard for Gurutaku learning games.
 
 ## What it does
 
-The dashboard supports three discovery modes in `apps.json`:
+- Automatically discovers current GitHub Pages repositories for the `gurutaku` account.
+- Excludes the dashboard repository itself (`gurutaku.github.io`).
+- Ignores archived, disabled, and forked repositories.
+- Uses fresh GitHub API requests instead of storing a discovered-app cache, so deleted repositories do not linger in the dashboard.
+- Supports a simple `apps.json` file for manual games, custom titles, categories, icons, featured games, and ordering.
+- Hybrid mode combines the manual list with discovered apps.
+- Search, subject filters, favorites, recent-game highlighting, responsive mobile/tablet layout, and a playful elementary-school visual design.
 
-- `auto`: discover public GitHub repositories that have GitHub Pages enabled.
-- `manual`: show only the entries in `manualApps`.
-- `hybrid`: discover GitHub Pages apps and also include the entries in `manualApps`.
+## Why a deleted repository might have appeared before
 
-The default is `hybrid`.
+The earlier dashboard build could show repositories through its discovery path and also accepted manually configured entries. It also did not hard-exclude the dashboard URL at the final merge stage. This build now filters the dashboard repository by both repository name and URL, de-duplicates results, ignores forks, and never persists a discovered-app cache.
 
-GitHub's public repository API exposes a `has_pages` field, so the dashboard can use that to identify repositories with Pages enabled. Public repository listing can be used without authentication. See the GitHub REST API documentation: https://docs.github.com/en/rest/repos/repos
+## `apps.json`
 
-## Recommended deployment
+Use `discovery.mode`:
 
-Put this dashboard in your main `gurutaku.github.io` repository. Then publish the other games as separate GitHub Pages project sites, for example:
+- `hybrid`: show manual apps plus discovered Pages apps.
+- `auto`: show only discovered Pages apps.
+- `manual`: show only entries in `manualApps`.
 
-- `https://gurutaku.github.io/chinese-character-weekly/`
-- `https://gurutaku.github.io/math24/`
+Use `discovery.ignoreRepositories` for repositories that should never be shown. Use `overrides.<repo-name>.hide: true` for a per-repository hide rule.
 
-GitHub Pages project sites use the repository name as the path under the main `*.github.io` site. See: https://docs.github.com/en/pages/quickstart
+For a tightly curated school-facing portal, `manual` mode is the safest choice because every visible game is explicitly selected. `hybrid` mode is convenient while you are actively creating new games.
 
-## Managing apps manually
+## GitHub Pages
 
-Edit `apps.json`.
-
-A manual entry looks like:
-
-```json
-{
-  "id": "my-game",
-  "title": "我的新遊戲",
-  "description": "A short description shown on the card.",
-  "url": "https://gurutaku.github.io/my-game/",
-  "category": "遊戲",
-  "icon": "🎮",
-  "featured": false,
-  "order": 20
-}
-```
-
-### Useful controls
-
-`manualApps` — explicit list of apps to show.
-
-`overrides` — customize an automatically discovered repository without changing its repo metadata. You can set `title`, `description`, `category`, `icon`, `featured`, `order`, or `hide`.
-
-`discovery.mode` — `auto`, `manual`, or `hybrid`.
-
-`discovery.discoverGitHubPages` — set to `false` to disable GitHub API discovery entirely.
-
-## School-network-friendly behavior
-
-The dashboard itself has no external JavaScript or CSS dependencies. If the GitHub API is blocked on a school network, the dashboard automatically falls back to `apps.json` so the app list can still appear.
-
-For the most reliable school deployment, keep your important games listed in `manualApps`, even when automatic discovery is enabled.
-
-## Notes about automatic discovery
-
-Automatic discovery can identify repositories with Pages enabled, but GitHub does not provide a perfect "this is an educational app" classification. The `overrides` section lets you rename, categorize, pin, or hide discovered repositories.
+Upload the contents of this folder to the `gurutaku.github.io` repository and enable GitHub Pages from the repository's `main` branch (or use your preferred Pages workflow).

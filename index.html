@@ -3,68 +3,63 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f7f4ee" />
-  <meta name="description" content="Gurutaku learning games and activities." />
-  <title>Gurutaku · Learning Games</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#57c7ec" />
+  <meta name="description" content="Gurutaku learning games for curious kids." />
+  <title>Gurutaku · Game Garden</title>
+  <link rel="stylesheet" href="style.css?v=2026.10.07-kids-2" />
 </head>
 <body>
-  <div class="page-bg" aria-hidden="true">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="grid-noise"></div>
+  <div class="sky" aria-hidden="true">
+    <span class="cloud cloud-1"></span><span class="cloud cloud-2"></span><span class="cloud cloud-3"></span>
+    <span class="sun">☀️</span>
+    <span class="star star-1">✦</span><span class="star star-2">✦</span><span class="star star-3">✧</span>
   </div>
 
-  <div class="site-shell">
+  <div class="page-shell">
     <header class="site-header">
       <a class="brand" href="./" aria-label="Gurutaku home">
-        <span class="brand-mark">G</span>
-        <span>
-          <strong>gurutaku</strong>
-          <small>Learning Playground</small>
-        </span>
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-copy"><strong>gurutaku</strong><small>Game Garden</small></span>
       </a>
       <div class="header-actions">
-        <button id="refreshBtn" class="header-btn" type="button">↻ Refresh</button>
+        <button id="refreshBtn" class="header-btn" type="button" title="Check for new games">↻ <span>Refresh</span></button>
         <a id="githubBtn" class="header-btn" target="_blank" rel="noreferrer" href="https://github.com/gurutaku">GitHub ↗</a>
       </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" aria-labelledby="heroTitle">
         <div class="hero-copy">
-          <div class="eyebrow">LEARN · PLAY · PRACTICE</div>
-          <h1>What will you play today?<br><span>Learning can be fun.</span></h1>
-          <p>All of Gurutaku's learning games in one place. Search, choose, and start playing.</p>
-          <div class="hero-meta">
+          <div class="hero-kicker"><span>🎈</span> Welcome to the playground!</div>
+          <h1 id="heroTitle">Ready to <span>play</span><br />and learn?</h1>
+          <p>Pick a game, try a challenge, and have some fun. There is always something new to explore.</p>
+          <div class="hero-meta" aria-label="Game library summary">
             <div class="stat-pill"><strong id="appCount">—</strong><span>games</span></div>
-            <div class="stat-pill"><strong id="categoryCount">—</strong><span>topics</span></div>
-            <div class="stat-pill"><strong id="sourceStatus">—</strong><span>source</span></div>
+            <div class="stat-pill"><strong id="categoryCount">—</strong><span>subjects</span></div>
+            <div class="stat-pill"><strong id="sourceStatus">Loading…</strong><span>library</span></div>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="hero-card-top">
-            <span class="sparkle">✦</span>
-            <span>Featured game</span>
-          </div>
+
+        <div class="hero-card" aria-label="Featured game">
+          <div class="hero-card-top"><span>🏆</span> Today's pick</div>
           <div id="featuredPreview" class="featured-preview">
-            <div class="loading-lines"><i></i><i></i><i></i></div>
+            <div class="loading-blob"><span>🎮</span><i></i><i></i></div>
           </div>
         </div>
       </section>
 
-      <section class="toolbar" aria-label="Search and filters">
+      <section class="toolbar" aria-label="Find a game">
         <label class="search-box">
-          <span>⌕</span>
-          <input id="searchInput" type="search" placeholder="Search games, topics, or keywords…" autocomplete="off" />
+          <span aria-hidden="true">🔍</span>
+          <input id="searchInput" type="search" placeholder="Find a game…" autocomplete="off" />
         </label>
-        <div id="categoryFilters" class="filter-row" role="tablist" aria-label="Game categories"></div>
+        <div id="categoryFilters" class="filter-row" aria-label="Game subjects"></div>
       </section>
 
       <section class="section-heading">
         <div>
-          <div class="eyebrow">YOUR PLAYGROUND</div>
-          <h2>All Games</h2>
+          <div class="mini-kicker">CHOOSE YOUR NEXT ADVENTURE</div>
+          <h2>Pick a game! <span>🎮</span></h2>
         </div>
         <div id="resultCount" class="result-count">Loading…</div>
       </section>
@@ -72,28 +67,27 @@
       <section id="appGrid" class="app-grid" aria-live="polite"></section>
 
       <section id="emptyState" class="empty-state hidden">
-        <div class="empty-icon">🔎</div>
+        <div class="empty-icon">🕵️</div>
         <h3>No games found</h3>
-        <p>Try another search term, or clear the filters.</p>
-        <button id="clearFiltersBtn" class="primary-btn" type="button">Clear filters</button>
+        <p>Try a different word or explore all games.</p>
+        <button id="clearFiltersBtn" class="primary-btn" type="button">Show all games</button>
       </section>
 
-      <section class="manage-note">
-        <div class="manage-icon">⚙</div>
+      <section class="grownup-note" aria-label="For grown-ups">
+        <div class="grownup-icon">🛠️</div>
         <div>
-          <strong>Want to manage the game list yourself?</strong>
-          <p>Edit <code>apps.json</code> in this site. You can disable auto-discovery or override titles, categories, icons, and ordering.</p>
+          <strong>For grown-ups: managing the game list</strong>
+          <p>To curate games yourself, edit <code>apps.json</code>. You can also hide a repository, rename a game, choose its subject, and change the order.</p>
         </div>
-        <a target="_blank" rel="noreferrer" href="https://docs.github.com/en/pages">GitHub Pages ↗</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>Gurutaku · Made for curious learners</span>
+      <span>🌟 Gurutaku · Learn a little. Play a lot.</span>
       <span id="lastUpdated">—</span>
     </footer>
   </div>
 
-  <script src="app.js" defer></script>
+  <script src="app.js?v=2026.10.07-kids-2" defer></script>
 </body>
 </html>
