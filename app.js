@@ -5,7 +5,7 @@ const FALLBACK_CONFIG = {
     mode: 'hybrid',
     discoverGitHubPages: true,
     maxRepositories: 300,
-    ignoreRepositories: ['gurutaku.github.io']
+    ignoreRepositories: ['coolgames']
   },
   overrides: {},
   manualApps: []
@@ -48,11 +48,9 @@ function normalizeApp(app) {
 
 function inferCategory(app) {
   const text = `${app.name || ''} ${app.description || ''} ${(app.topics || []).join(' ')}`.toLowerCase();
-  if (/chinese|zh|中文|漢字|mandarin/.test(text)) return 'Chinese';
-  if (/math|算|數|algebra|multiplication|fraction/.test(text)) return 'Math';
-  if (/reading|read|閱讀|story|vocabulary/.test(text)) return 'Reading';
-  if (/science|science|stem|生物|化學|physics/.test(text)) return 'Science';
-  if (/game|quiz|遊戲|小測驗/.test(text)) return 'Games';
+  if (/chinese|zh|中文|漢字|mandarin|bopomofo/.test(text)) return 'Chinese';
+  if (/math|algebra|multiplication|fraction/.test(text)) return 'Math';
+  if (/reading|read|spell|vocab/.test(text)) return 'English';
   return 'Other';
 }
 function inferIcon(app) {
@@ -139,7 +137,7 @@ function mergeApps(config, discovered) {
   const manual = (config.manualApps || []).map(a => ({ ...a, source: 'manual' })).map(normalizeApp).filter(Boolean);
   const manualIds = new Set(manual.map(a => a.id));
   const ignored = new Set([
-    'gurutaku.github.io',
+    'coolgames',
     ...(config.discovery?.ignoreRepositories || []),
     ...Object.entries(config.overrides || {}).filter(([, v]) => v && v.hide).map(([id]) => id)
   ].map(String).map(v => v.toLowerCase()));

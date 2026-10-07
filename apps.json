@@ -11,8 +11,7 @@
     "discoverGitHubPages": true,
     "maxRepositories": 300,
     "ignoreRepositories": [
-      "gurutaku.github.io",
-      "gurutaku.github.io/coolgames/"
+      "coolgames"
     ]
   },
   "overrides": {
