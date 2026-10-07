@@ -383,6 +383,5 @@ $('clearFiltersBtn').addEventListener('click', () => {
   renderAll();
 });
 $('refreshBtn').addEventListener('click', () => loadDashboard());
-$('githubBtn').href = FALLBACK_CONFIG.site.githubUrl;
 
 loadDashboard();
