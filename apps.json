@@ -39,8 +39,8 @@
   "manualApps": [
     {
       "id": "gr4-math-game",
-      "title": "Grade 4 Math Game",
-      "subtitle": "Grade 4 Math Game",
+      "title": "Math Quest",
+      "subtitle": "Grade 4",
       "description": "A math game for everyone",
       "url": "https://gurutaku.ca/gr4-math-game/",
       "category": "Math",
@@ -50,8 +50,8 @@
     },
     {
       "id": "weekly-spelling-list",
-      "title": "Grade 4 Weekly Spelling List",
-      "subtitle": "Grade 4 Weekly Spelling List",
+      "title": "Spelling Bee",
+      "subtitle": "Grade 4",
       "description": "Fun ways to practice spelling",
       "url": "https://gurutaku.ca/weekly-spelling-list/",
       "category": "English",
@@ -60,8 +60,8 @@
     },
     {
       "id": "bopomofo",
-      "title": "Bopomofo Adventure",
-      "subtitle": "Bopomofo Adventure",
+      "title": "Chinese Bopomofo Adventure",
+      "subtitle": "Beginners",
       "description": "A fun way to practice Chinese phonetic symbols",
       "url": "https://gurutaku.ca/bopomofo/",
       "category": "Math",
@@ -70,8 +70,8 @@
     },
     {
       "id": "weekly-chinese-game",
-      "title": "Weekly Chinese Characters for Beginners",
-      "subtitle": "Weekly Chinese Characters for Beginners",
+      "title": "Weekly Chinese Characters",
+      "subtitle": "Intermediate",
       "description": "A fun way to learn chinese",
       "url": "https://gurutaku.ca/weekly-chinese-game/",
       "category": "Chinese",
