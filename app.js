@@ -2,7 +2,7 @@ const BUILD = '2026.10.07-kids-2';
 const FALLBACK_CONFIG = {
   site: { name: 'gurutaku', tagline: 'Game Garden', githubUser: 'gurutaku', githubUrl: 'https://github.com/gurutaku' },
   discovery: {
-    mode: 'hybrid',
+    mode: 'auto',
     discoverGitHubPages: true,
     maxRepositories: 300,
     ignoreRepositories: ['coolgames']
@@ -193,15 +193,14 @@ const CATEGORY_STYLE = {
   'All Games': 'rainbow',
   'Math': 'math',
   'Chinese': 'chinese',
-  'Reading': 'reading',
   'Science': 'science',
-  'Games': 'games',
+  'English': 'english',
   'Other': 'other'
 };
 
 function categoryIcon(category) {
   return {
-    'All Games': '🌈', Math: '🔢', Chinese: '🀄', Reading: '📚', Science: '🔬', Games: '🎮', Other: '✨'
+    'All Games': '🌈', Math: '🔢', Chinese: '🀄', Science: '🔬', English: '🔤', Other: '✨'
   }[category] || '⭐';
 }
 
