@@ -100,16 +100,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .filter-btn.rainbow { background:#fff5cb; }
 .filter-btn.math { background:#dff7eb; }
 .filter-btn.chinese { background:#ffe3ef; }
-.filter-btn.reading { background:#e9e1ff; }
 .filter-btn.science { background:#dff2ff; }
-.filter-btn.games { background:#fff0d6; }
+.filter-btn.english { background:#fff0d6; }
 .filter-btn.other { background:#eef1f4; }
 .filter-btn.rainbow.active { background:#ffbe4e; }
 .filter-btn.math.active { background:#41bd87; }
 .filter-btn.chinese.active { background:#ed659a; }
-.filter-btn.reading.active { background:#8b73e8; }
 .filter-btn.science.active { background:#3fa9dd; }
-.filter-btn.games.active { background:#ee9743; }
+.filter-btn.english.active { background:#ee9743; }
 .filter-btn.other.active { background:#667b8e; }
 
 .section-heading { display:flex; align-items:end; justify-content:space-between; gap:12px; margin:8px 0 16px; }
@@ -142,15 +140,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .app-card.chinese .app-icon { background:#ffc5df; }
 .app-card.chinese:after { background:#ffdfed; }
 .app-card.chinese .play-btn { background:#eb679a; }
-.app-card.reading .app-icon { background:#cfc5ff; }
-.app-card.reading:after { background:#e3ddff; }
-.app-card.reading .play-btn { background:#8875e5; }
 .app-card.science .app-icon { background:#bfe8fb; }
 .app-card.science:after { background:#daf2fd; }
 .app-card.science .play-btn { background:#3ba8d8; }
-.app-card.games .app-icon { background:#ffd59d; }
-.app-card.games:after { background:#ffead0; }
-.app-card.games .play-btn { background:#ef9746; }
+.app-card.english .app-icon { background:#ffd59d; }
+.app-card.english:after { background:#ffead0; }
+.app-card.english .play-btn { background:#ef9746; }
 .app-card.other .app-icon { background:#dbe4ed; }
 .app-card.other:after { background:#e8eef4; }
 .app-card.other .play-btn { background:#64798d; }
