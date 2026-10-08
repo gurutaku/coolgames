@@ -77,6 +77,16 @@
       "category": "Chinese",
       "icon": "🀄",
       "order": 4
+    },
+    {
+      "id": "50-50",
+      "title": "50-50 Coin Toss",
+      "subtitle": "Grade 4 Level",
+      "description": "Can a fair coin really land on Heads and Tails about half the time? Make a prediction, toss the coin, and watch the numbers change as your experiment grows.",
+      "url": "https://gurutaku.ca/50-50/",
+      "category": "Math",
+      "icon": "🔢",
+      "order": 5
     }
   ]
 }
