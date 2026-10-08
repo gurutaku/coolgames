@@ -40,7 +40,7 @@
     {
       "id": "gr4-math-quest",
       "title": "Grade 4 Math Quest",
-      "subtitle": "Grade 4",
+      "subtitle": "Grade 4 Level",
       "description": "Addition, substraction, multiplication, and division. Solve the puzzles, challenge the speedrun, and collect mystery chests!",
       "url": "https://gurutaku.ca/gr4-math-quest/",
       "category": "Math",
@@ -51,7 +51,7 @@
     {
       "id": "g4-spelling-bee",
       "title": "Grade 4 Spelling Bee",
-      "subtitle": "Grade 4",
+      "subtitle": "Grade 4 Level",
       "description": "Try not to lose your streak! Solve the weekly spelling bee and scramble challenges!",
       "url": "https://gurutaku.ca/gr4-spelling-bee/",
       "category": "English",
@@ -61,7 +61,7 @@
     {
       "id": "bopomofo",
       "title": "Chinese Bopomofo Adventure",
-      "subtitle": "Beginner",
+      "subtitle": "Beginner Level",
       "description": "What score can you get by spotting Chinese phonetic symbols - bopomofo?",
       "url": "https://gurutaku.ca/bopomofo/",
       "category": "Chinese",
@@ -71,7 +71,7 @@
     {
       "id": "weekly-chinese-game",
       "title": "Weekly Chinese Characters",
-      "subtitle": "Intermediate",
+      "subtitle": "Intermediate Level",
       "description": "Don't lose your daily streak! Learn how amazing Chinese characters are pronounced and written!",
       "url": "https://gurutaku.ca/weekly-chinese-game/",
       "category": "Chinese",
