@@ -57,9 +57,8 @@ function inferIcon(app) {
   const cat = inferCategory(app);
   if (cat === 'Chinese') return '🀄';
   if (cat === 'Math') return '🔢';
-  if (cat === 'Reading') return '📚';
   if (cat === 'Science') return '🔬';
-  if (cat === 'Games') return '🎮';
+  if (cat === 'English') return '🔤';
   return '⭐';
 }
 
