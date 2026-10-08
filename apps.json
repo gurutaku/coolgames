@@ -7,7 +7,7 @@
     "githubUrl": "https://github.com/gurutaku"
   },
   "discovery": {
-    "mode": "auto",
+    "mode": "manual",
     "discoverGitHubPages": true,
     "maxRepositories": 300,
     "ignoreRepositories": [
@@ -38,25 +38,45 @@
   },
   "manualApps": [
     {
-      "id": "chinese-character-weekly",
-      "title": "Weekly Chinese Characters",
-      "subtitle": "10 characters a week · 520 for the year",
-      "description": "Learn Traditional Chinese characters with stroke order, pronunciation, meanings, and example sentences.",
-      "url": "https://gurutaku.github.io/chinese-character-weekly/",
-      "category": "Chinese",
-      "icon": "🀄",
+      "id": "gr4-math-game",
+      "title": "Grade 4 Math Game",
+      "subtitle": "Grade 4 Math Game",
+      "description": "A math game for everyone",
+      "url": "https://gurutaku.ca/gr4-math-game/",
+      "category": "Math",
+      "icon": "🔢",
       "featured": true,
       "order": 1
     },
     {
-      "id": "math24",
-      "title": "Math 24",
-      "subtitle": "Make 24!",
-      "description": "Use four numbers and math operations to make the number 24.",
-      "url": "https://gurutaku.github.io/math24/",
-      "category": "Math",
-      "icon": "🔢",
+      "id": "weekly-spelling-list",
+      "title": "Grade 4 Weekly Spelling List",
+      "subtitle": "Grade 4 Weekly Spelling List",
+      "description": "Fun ways to practice spelling",
+      "url": "https://gurutaku.ca/weekly-spelling-list/",
+      "category": "English",
+      "icon": "🔤",
       "order": 2
+    },
+    {
+      "id": "bopomofo",
+      "title": "Bopomofo Adventure",
+      "subtitle": "Bopomofo Adventure",
+      "description": "A fun way to practice Chinese phonetic symbols",
+      "url": "https://gurutaku.ca/bopomofo/",
+      "category": "Math",
+      "icon": "🀄",
+      "order": 3
+    },
+    {
+      "id": "weekly-chinese-game",
+      "title": "Weekly Chinese Characters for Beginners",
+      "subtitle": "Weekly Chinese Characters for Beginners",
+      "description": "A fun way to learn chinese",
+      "url": "https://gurutaku.ca/weekly-chinese-game/",
+      "category": "Chinese",
+      "icon": "🀄",
+      "order": 4
     }
   ]
 }
