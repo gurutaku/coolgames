@@ -58,6 +58,7 @@ function inferIcon(app) {
   if (cat === 'Chinese') return '🀄';
   if (cat === 'Math') return '🔢';
   if (cat === 'Science') return '🔬';
+  if (cat === 'Music') return '🎵';
   if (cat === 'English') return '🔤';
   return '⭐';
 }
@@ -194,13 +195,14 @@ const CATEGORY_STYLE = {
   'Math': 'math',
   'Chinese': 'chinese',
   'Science': 'science',
+  'Music': 'music',
   'English': 'english',
   'Other': 'other'
 };
 
 function categoryIcon(category) {
   return {
-    'All Games': '🌈', Math: '🔢', Chinese: '🀄', Science: '🔬', English: '🔤', Other: '✨'
+    'All Games': '🌈', Math: '🔢', Chinese: '🀄', Science: '🔬', Music: '🎵', English: '🔤', Other: '✨'
   }[category] || '⭐';
 }
 
