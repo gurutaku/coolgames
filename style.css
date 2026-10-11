@@ -101,12 +101,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .filter-btn.math { background:#dff7eb; }
 .filter-btn.chinese { background:#ffe3ef; }
 .filter-btn.science { background:#dff2ff; }
+.filter-btn.music { background:#fce4ec; }
 .filter-btn.english { background:#fff0d6; }
 .filter-btn.other { background:#eef1f4; }
 .filter-btn.rainbow.active { background:#ffbe4e; }
 .filter-btn.math.active { background:#41bd87; }
 .filter-btn.chinese.active { background:#ed659a; }
 .filter-btn.science.active { background:#3fa9dd; }
+.filter-btn.music.active { background:#ec6b9a; }
 .filter-btn.english.active { background:#ee9743; }
 .filter-btn.other.active { background:#667b8e; }
 
@@ -143,6 +145,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .app-card.science .app-icon { background:#bfe8fb; }
 .app-card.science:after { background:#daf2fd; }
 .app-card.science .play-btn { background:#3ba8d8; }
+.app-card.music .app-icon { background:#f8c9dc; }
+.app-card.music:after { background:#fce4ec; }
+.app-card.music .play-btn { background:#ec6b9a; }
 .app-card.english .app-icon { background:#ffd59d; }
 .app-card.english:after { background:#ffead0; }
 .app-card.english .play-btn { background:#ef9746; }
