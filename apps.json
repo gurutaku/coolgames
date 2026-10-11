@@ -87,6 +87,16 @@
       "category": "Math",
       "icon": "🔢",
       "order": 5
+    },
+    {
+      "id": "karaoke4kids",
+      "title": "Christmas Sing-Along",
+      "subtitle": "Made for Everyone",
+      "description": "Sing along to 8 beloved Christmas carols. Choose your favourite, follow the lyrics, and let the festive fun begin!",
+      "url": "https://gurutaku.ca/karaoke4kids/",
+      "category": "Music",
+      "icon": "🎵",
+      "order": 6
     }
   ]
 }
