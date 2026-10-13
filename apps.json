@@ -5,7 +5,7 @@
     "description": "A cheerful home for Gurutaku learning games.",
     "githubUser": "gurutaku",
     "githubUrl": "https://github.com/gurutaku",
-    "featuredAppId": "gr4-math-quest"
+    "featuredAppId": "timequest"
   },
   "discovery": {
     "mode": "manual",
@@ -102,7 +102,7 @@
     {
       "id": "timequest",
       "title": "Grade 4 Time Quest",
-      "subtitle": "Learn to Tell Time!",
+      "subtitle": "Grade 4 Level",
       "description": "Master the clock through fun challenges! Build a clock, read the time, and solve everyday time mysteries.",
       "url": "https://gurutaku.ca/gr4-time-quest/",
       "category": "Math",
@@ -112,7 +112,7 @@
     {
       "id": "keyquest",
       "title": "Key Quest",
-      "subtitle": "Master the Keyboard!",
+      "subtitle": "Beginner Level",
       "description": "Build typing speed and accuracy through fun keyboard challenges! Learn key positions, practise typing, and become a keyboard hero.",
       "url": "https://gurutaku.ca/typing-game/",
       "category": "English",
