@@ -107,6 +107,16 @@
       "category": "Math",
       "icon": "⏰",
       "order": 7
+    },
+    {
+      "id": "keyquest",
+      "title": "Key Quest",
+      "subtitle": "Master the Keyboard!",
+      "description": "Build typing speed and accuracy through fun keyboard challenges! Learn key positions, practise typing, and become a keyboard hero.",
+      "url": "https://gurutaku.ca/typing-game/",
+      "category": "English",
+      "icon": "⌨️",
+      "order": 8
     }
   ]
 }
