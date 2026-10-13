@@ -31,3 +31,26 @@ For a tightly curated school-facing portal, `manual` mode is the safest choice b
 ## GitHub Pages
 
 Upload the contents of this folder to the `gurutaku.github.io` repository and enable GitHub Pages from the repository's `main` branch (or use your preferred Pages workflow).
+
+## Favorites
+
+Tap the star on a game card to add or remove it from favorites. Use **Show favorites** above the game list to filter to saved games. Favorites are saved in the browser's local storage, so they stay on that browser/device. If browser storage is disabled, the favorite still works for the current session.
+
+## Today's pick
+
+Set `site.featuredAppId` in `apps.json` to the `id` of the game you want in the **Today's pick** panel. For example:
+
+```json
+{
+  "site": {
+    "name": "gurutaku",
+    "tagline": "Game Garden",
+    "description": "A cheerful home for Gurutaku learning games.",
+    "githubUser": "gurutaku",
+    "githubUrl": "https://github.com/gurutaku",
+    "featuredAppId": "gr4-math-quest"
+  }
+}
+```
+
+Change `featuredAppId` to another entry's `id`, such as `keyquest` or `karaoke4kids`. The `id` must match exactly. If the chosen ID is not found, the dashboard falls back to an entry with `featured: true`, then a recent game, then the first game in the list.

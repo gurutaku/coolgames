@@ -4,7 +4,8 @@
     "tagline": "Game Garden",
     "description": "A cheerful home for Gurutaku learning games.",
     "githubUser": "gurutaku",
-    "githubUrl": "https://github.com/gurutaku"
+    "githubUrl": "https://github.com/gurutaku",
+    "featuredAppId": "gr4-math-quest"
   },
   "discovery": {
     "mode": "manual",

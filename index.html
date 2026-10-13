@@ -15,7 +15,7 @@
   <meta name="theme-color" content="#57c7ec" />
   <meta name="description" content="Gurutaku learning games for curious kids." />
   <title>Gurutaku · Game Garden</title>
-  <link rel="stylesheet" href="style.css?v=2026.10.07-kids-2" />
+  <link rel="stylesheet" href="style.css?v=2026.10.13-favorites-fix-1" />
 </head>
 <body>
   <div class="sky" aria-hidden="true">
@@ -43,7 +43,6 @@
           <div class="hero-meta" aria-label="Game library summary">
             <div class="stat-pill"><strong id="appCount">—</strong><span>games</span></div>
             <div class="stat-pill"><strong id="categoryCount">—</strong><span>subjects</span></div>
-            <div class="stat-pill"><strong id="sourceStatus">Loading…</strong><span>library</span></div>
           </div>
         </div>
 
@@ -68,7 +67,10 @@
           <div class="mini-kicker">CHOOSE YOUR NEXT ADVENTURE</div>
           <h2>Pick a game! <span>🎮</span></h2>
         </div>
-        <div id="resultCount" class="result-count">Loading…</div>
+        <div class="section-actions">
+          <button id="favoritesToggle" class="favorites-toggle" type="button" aria-pressed="false">☆ Show favorites <span class="favorite-count">0</span></button>
+          <div id="resultCount" class="result-count">Loading…</div>
+        </div>
       </section>
 
       <section id="appGrid" class="app-grid" aria-live="polite"></section>
@@ -79,6 +81,7 @@
         <p>Try a different word or explore all games.</p>
         <button id="clearFiltersBtn" class="primary-btn" type="button">Show all games</button>
       </section>
+      <div id="actionStatus" class="action-status" role="status" aria-live="polite"></div>
 
     </main>
 
@@ -88,6 +91,6 @@
     </footer>
   </div>
 
-  <script src="app.js?v=2026.10.07-kids-2" defer></script>
+  <script src="app.js?v=2026.10.13-favorites-fix-1" defer></script>
 </body>
 </html>

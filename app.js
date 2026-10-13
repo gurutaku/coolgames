@@ -1,4 +1,4 @@
-const BUILD = '2026.10.07-kids-2';
+const BUILD = '2026.10.13-favorites-fix-1';
 const FALLBACK_CONFIG = {
   site: { name: 'gurutaku', tagline: 'Game Garden', githubUser: 'gurutaku', githubUrl: 'https://github.com/gurutaku' },
   discovery: {
@@ -16,7 +16,8 @@ const state = {
   apps: [],
   query: '',
   category: 'All Games',
-  favorites: loadJSON('gurutaku-dashboard-favorites', []),
+  favoritesOnly: false,
+  favorites: normalizeStringArray(loadJSON('gurutaku-dashboard-favorites', [])),
   recent: loadJSON('gurutaku-dashboard-recent', []),
   discoveryWorked: false
 };
@@ -27,7 +28,19 @@ function loadJSON(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback; }
   catch (_) { return fallback; }
 }
-function saveJSON(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+function saveJSON(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  } catch (error) {
+    // The current session should remain usable even when browser storage is blocked.
+    console.warn(`Could not save ${key} to local storage.`, error);
+    return false;
+  }
+}
+function normalizeStringArray(value) {
+  return Array.isArray(value) ? value.filter(item => typeof item === 'string') : [];
+}
 
 function normalizeApp(app) {
   if (!app || !app.url) return null;
@@ -177,6 +190,7 @@ function repoIdFromUrl(url) {
 function getVisibleApps() {
   const q = state.query.trim().toLowerCase();
   return state.apps.filter(app => {
+    if (state.favoritesOnly && !isFavorite(app.id)) return false;
     const matchesCategory = state.category === 'All Games' || app.category === state.category;
     if (!matchesCategory) return false;
     if (!q) return true;
@@ -226,10 +240,36 @@ function renderFilters() {
 function isFavorite(id) { return state.favorites.includes(id); }
 
 function toggleFavorite(id) {
-  state.favorites = isFavorite(id) ? state.favorites.filter(x => x !== id) : [id, ...state.favorites];
-  saveJSON('gurutaku-dashboard-favorites', state.favorites);
+  const removing = isFavorite(id);
+  state.favorites = removing
+    ? state.favorites.filter(x => x !== id)
+    : [id, ...state.favorites.filter(x => x !== id)];
+  // Render first so the button always responds, even if storage is unavailable.
   renderAll();
+  const saved = saveJSON('gurutaku-dashboard-favorites', state.favorites);
+  announceStatus(saved
+    ? (removing ? 'Removed from favorites.' : 'Added to favorites.')
+    : (removing ? 'Removed for this session. Browser storage is unavailable.' : 'Added for this session. Browser storage is unavailable.'));
 }
+
+let statusAnnouncementTimer;
+function announceStatus(message) {
+  const status = $('actionStatus');
+  if (!status) return;
+  status.textContent = message;
+  status.classList.add('visible');
+  clearTimeout(statusAnnouncementTimer);
+  statusAnnouncementTimer = setTimeout(() => status.classList.remove('visible'), 2200);
+}
+
+function renderFavoritesToggle() {
+  const button = $('favoritesToggle');
+  if (!button) return;
+  button.classList.toggle('active', state.favoritesOnly);
+  button.setAttribute('aria-pressed', String(state.favoritesOnly));
+  button.innerHTML = `${state.favoritesOnly ? '★ Showing favorites' : '☆ Show favorites'} <span class="favorite-count">${state.favorites.length}</span>`;
+}
+
 
 function recordRecent(id) {
   state.recent = [id, ...state.recent.filter(x => x !== id)].slice(0, 8);
@@ -300,6 +340,17 @@ function renderApps() {
   grid.innerHTML = '';
   if (!visible.length) {
     empty.classList.remove('hidden');
+    const heading = empty.querySelector('h3');
+    const message = empty.querySelector('p');
+    if (state.favoritesOnly) {
+      heading.textContent = state.favorites.length ? 'No favorite games match' : 'No favorites yet';
+      message.textContent = state.favorites.length
+        ? 'Try clearing your search or choosing another subject.'
+        : 'Tap the star on any game card to save it here.';
+    } else {
+      heading.textContent = 'No games found';
+      message.textContent = 'Try a different word or explore all games.';
+    }
   } else {
     empty.classList.add('hidden');
     visible.forEach((app, i) => grid.appendChild(appCard(app, i)));
@@ -308,7 +359,8 @@ function renderApps() {
 }
 
 function renderHero() {
-  const featured = state.apps.find(a => a.featured) || state.apps.find(a => state.recent.includes(a.id)) || state.apps[0];
+  const preferredId = state.config.site?.featuredAppId;
+  const featured = state.apps.find(a => a.id === preferredId) || state.apps.find(a => a.featured) || state.apps.find(a => state.recent.includes(a.id)) || state.apps[0];
   const node = $('featuredPreview');
   if (!featured) {
     node.innerHTML = '<div class="no-feature"><span>🌱</span><strong>Your game garden is growing!</strong><p>Add a game to <code>apps.json</code> or publish a GitHub Pages app.</p></div>';
@@ -329,11 +381,11 @@ function renderHero() {
 
 function renderAll() {
   renderFilters();
+  renderFavoritesToggle();
   renderHero();
   renderApps();
   $('appCount').textContent = String(state.apps.length);
   $('categoryCount').textContent = String(Math.max(0, categories().length - 1));
-  $('sourceStatus').textContent = state.discoveryWorked ? 'Live' : 'List';
   $('lastUpdated').textContent = `Checked ${new Intl.DateTimeFormat('en-CA', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date())}`;
 }
 
@@ -343,9 +395,8 @@ function escapeHTML(value) {
 function escapeAttr(value) { return escapeHTML(value).replace(/'/g, '&#39;'); }
 
 async function loadDashboard() {
-  $('sourceStatus').textContent = 'Loading…';
   // Older builds did not persist a repo cache, but clear any experimental/stale key just in case.
-  localStorage.removeItem('gurutaku-dashboard-discovered-apps');
+  try { localStorage.removeItem('gurutaku-dashboard-discovered-apps'); } catch (_) { /* storage may be blocked */ }
 
   try {
     const response = await fetch(`apps.json?_=${encodeURIComponent(BUILD)}-${Date.now()}`, { cache: 'no-store' });
@@ -379,9 +430,14 @@ $('searchInput').addEventListener('input', e => {
 $('clearFiltersBtn').addEventListener('click', () => {
   state.query = '';
   state.category = 'All Games';
+  state.favoritesOnly = false;
   $('searchInput').value = '';
   renderAll();
 });
 $('refreshBtn').addEventListener('click', () => loadDashboard());
+$('favoritesToggle').addEventListener('click', () => {
+  state.favoritesOnly = !state.favoritesOnly;
+  renderAll();
+});
 
 loadDashboard();
