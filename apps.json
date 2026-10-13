@@ -97,6 +97,16 @@
       "category": "Music",
       "icon": "🎵",
       "order": 6
+    },
+    {
+      "id": "timequest",
+      "title": "Grade 4 Time Quest",
+      "subtitle": "Learn to Tell Time!",
+      "description": "Master the clock through fun challenges! Build a clock, read the time, and solve everyday time mysteries.",
+      "url": "https://gurutaku.ca/gr4-time-quest/",
+      "category": "Math",
+      "icon": "⏰",
+      "order": 7
     }
   ]
 }
