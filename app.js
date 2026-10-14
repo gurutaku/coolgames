@@ -390,7 +390,7 @@ function renderAll() {
 }
 
 function escapeHTML(value) {
-  return String(value).replace(/[&<>\"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]));
+  return String(value).replace(/[&<>\"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 }
 function escapeAttr(value) { return escapeHTML(value).replace(/'/g, '&#39;'); }
 
