@@ -1,7 +1,7 @@
 :root {
   --ink: #26364a;
   --muted: #66768a;
-  --sky: #eefaff;
+  --sky: #211633;
   --blue: #57c7ec;
   --blue-dark: #147da7;
   --yellow: #ffd95c;
@@ -30,8 +30,10 @@ body {
   color: var(--ink);
   font-family: ui-rounded, "Avenir Next", "Nunito", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at 12% 10%, rgba(255, 255, 255, .95) 0 8%, transparent 9%),
-    linear-gradient(180deg, #bfefff 0%, #effaff 37%, #fffdf6 100%);
+    radial-gradient(ellipse at 10% 12%, rgba(104, 64, 142, .72), transparent 36%),
+    radial-gradient(ellipse at 94% 88%, rgba(168, 76, 40, .42), transparent 30%),
+    radial-gradient(circle at 82% 18%, rgba(255, 207, 98, .10) 0 2px, transparent 3px),
+    linear-gradient(160deg, #211633 0%, #302044 52%, #43243f 100%);
 }
 
 button,
@@ -66,7 +68,7 @@ a {
   top: 55px;
   right: 7%;
   font-size: clamp(3rem, 8vw, 5rem);
-  filter: drop-shadow(0 8px 10px rgba(255, 190, 48, .2));
+  filter: drop-shadow(0 8px 12px rgba(255, 153, 48, .35));
 }
 
 .cloud {
@@ -74,7 +76,7 @@ a {
   width: 190px;
   height: 60px;
   border-radius: 60px;
-  background: rgba(255, 255, 255, .78);
+  background: rgba(199, 174, 220, .16);
   filter: blur(.3px);
 }
 
@@ -121,7 +123,7 @@ a {
 
 .star {
   position: absolute;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(255, 218, 132, .9);
   font-size: 2rem;
 }
 
@@ -1063,6 +1065,10 @@ a {
 }
 
 @media (max-width: 620px) {
+  .sun {
+    display: none;
+  }
+
   .page-shell {
     width: min(100% - 18px, 560px);
     padding-top: 12px;
@@ -1162,4 +1168,22 @@ a {
     transition: none !important;
     animation: none !important;
   }
+}
+
+.brand strong,
+.hero h1,
+.section-heading h2 {
+  color: #fff4e1;
+}
+
+.brand small,
+.hero-copy p,
+.mini-kicker,
+.result-count,
+.site-footer {
+  color: #d1c0df;
+}
+
+.site-footer {
+  border-color: rgba(231, 207, 255, .18);
 }
