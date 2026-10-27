@@ -108,9 +108,8 @@
       "category": "Math",
       "icon": "⏰",
       "order": 7
-    },
-    {
-      "id": "keyquest",
+    },    {
+      "id": "typing-game",
       "title": "Key Quest",
       "subtitle": "Beginner Level",
       "description": "Build typing speed and accuracy through fun keyboard challenges! Learn key positions, practise typing, and become a keyboard hero.",
@@ -118,10 +117,9 @@
       "category": "English",
       "icon": "⌨️",
       "order": 8
-    }
-    ,
+    },    
     {
-      "id": "typingdefender",
+      "id": "typing-village",
       "title": "Village Typing Defender",
       "subtitle": "Intermediate Level",
       "description": "Friendly threats are drifting toward the village. Type what you see to turn every threat into sparkles before it reaches the ground!",
@@ -129,6 +127,16 @@
       "category": "English",
       "icon": "⌨️",
       "order": 9
+    },    
+    {
+      "id": "pizza-math-madness",
+      "title": "Pizza Math Madness",
+      "subtitle": "Grade 4 Level",
+      "description": "Run the pizza shop! Collect the right number of pizzas to cover every order. The better you do, the faster the challenge gets.",
+      "url": "https://gurutaku.ca/pizza-math-madness/",
+      "category": "Math",
+      "icon": "🍕",
+      "order": 10
     }
   ]
 }
