@@ -5,7 +5,7 @@
     "description": "A cheerful home for Gurutaku learning games.",
     "githubUser": "gurutaku",
     "githubUrl": "https://github.com/gurutaku",
-    "featuredAppId": "timequest"
+    "featuredAppId": "vocab-merging-game"
   },
   "discovery": {
     "mode": "manual",
@@ -137,6 +137,16 @@
       "category": "Math",
       "icon": "🍕",
       "order": 10
+    },    
+    {
+      "id": "vocab-merging-game",
+      "title": "Word Recipe",
+      "subtitle": "Grade 4 Level",
+      "description": "Two little words make one bigger word. Find the pair, merge them, and grow your word collection before time runs out!",
+      "url": "https://gurutaku.ca/vocab-merging-game/",
+      "category": "English",
+      "icon": "📚",
+      "order": 11
     }
   ]
 }
